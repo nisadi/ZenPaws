@@ -1,49 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import '../App.css'
 
-[
+const Feedback = ()=> {
+  const feedback =[
     {
-      "id": 1,
-      "name": "John Doe",
-      "feedback": "Great service! Highly satisfied with my purchase.",
-      "rating": 5,
-      "image": "path/to/profile.jpg"
+      id:1,
+      uname:"Nisadi",
+      feedback:"Greate Service!",
+      rating:5,
     },
     {
-      "id": 2,
-      "name": "Jane Smith",
-      "feedback": "Amazing quality and fast delivery!",
-      "rating": 4,
-      "image": "path/to/profile.jpg"
+      id:2,
+      uname:"Imasha",
+      feedback:"Greate work!",
+      rating:4,
+    },
+    {
+      id:3,
+      uname:"Saduni",
+      feedback:"Good Service!",
+      rating:5,
     }
-  ]
-
-  const Testimonials = () => {
-    const [feedbacks, setFeedbacks] = useState([]);
-  
-    useEffect(() => {
-      // Simulated API call
-      fetch("/api/feedbacks") // Replace with your actual API endpoint
-        .then((response) => response.json())
-        .then((data) => setFeedbacks(data))
-        .catch((error) => console.error("Error fetching feedbacks:", error));
-    }, []);
-}
-function feedback() {
+  ];
+  const [feedbacks,setFeedbacks]=useState([]);
+  useEffect(()=>{
+    const fetchFeedbacks = async()=>{
+      await new Promise((resolve)=> setTimeout(resolve,500));
+      setFeedbacks(feedback);
+    };
+    fetchFeedbacks();
+  }, []);
   return (
-    <div className="testimonials">
-    <h2>What Our Customers Say</h2>
+    <div className="feedback">
+    <div className='feedback-board' style={{ backgroundColor: "#ff6600", height: "330px", width:"1050px" }}></div>
+    <h2 className='feedBACK-HEAD'>Customer Feedback</h2>
     <div className="feedback-list">
-      {feedbacks.map((feedback) => (
-        <div key={feedback.id} className="feedback-card">
-          <img src={feedback.image} alt={`${feedback.name}'s profile`} />
-          <h3>{feedback.name}</h3>
-          <p>{feedback.feedback}</p>
-          <span>Rating: {feedback.rating}⭐</span>
-        </div>
-      ))}
+      {feedbacks.length > 0 ? (
+        feedbacks.map((item) => (
+          <div key={item.id} className="feedback-card">
+            <h3>{item.uname}</h3>
+            <p>"{item.feedback}"</p>
+            <p>{item.rating}⭐</p>
+          </div>
+        ))
+      ) : (
+        <p>Loading feedback...</p>
+      )}
     </div>
   </div>
   )
 }
 
-export default feedback
+export default Feedback

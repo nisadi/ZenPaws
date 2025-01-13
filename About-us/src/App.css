@@ -1,1 +1,45 @@
+.feedback {
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top:500px
+  }
+  
+  .feedback-list {
+    position: absolute;
+    left: 120px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  .feedback-card {
+    background: #c05621;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(198, 11, 11, 0.1);
+  }
+  .feedBACK-HEAD{
+    position: absolute;
+    left: 150px;
+  }
+  
+  .feedback-card h3 {
+    margin: 10px 0 5px;
+  }
+  
+  .feedback-card p {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  .feedback-board{
+    position: absolute;
+    top: 200px;
+    left: 250px;
+    border-radius: 10px;
+  }
 
+  
+  

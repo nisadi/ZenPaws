@@ -18,7 +18,6 @@ const AboutUs = () => {
             <p className='text-[22px] absolute top-[195px] left-[750px]'>ZenPaws is an online platform <br/>that connects people with animal-assisted <br/> therapy services,offering a unique and effective way <br/>to promote their mental well-being.</p>
             </div>
 
-            <div className="bg-orange-500 w-[550px] h-[500px] mx-auto rounded-lg absolute top-[650px]"></div>
         </div>
       </div>    
     </div>      
