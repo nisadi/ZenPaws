@@ -32,8 +32,8 @@ const Feedback = ()=> {
   }, []);
   return (
     <div className="feedback">
-    <div className='feedback-board' style={{ backgroundColor: "#ff6600", height: "330px", width:"1050px" }}></div>
-    <h2 className='feedBACK-HEAD'>Customer Feedback</h2>
+        <div className='feedback-board' style={{ backgroundColor: "#ff660023", height: "330px", width:"1519px" }}></div>
+    <h2 >Customer Feedback</h2>
     <div className="feedback-list">
       {feedbacks.length > 0 ? (
         feedbacks.map((item) => (
