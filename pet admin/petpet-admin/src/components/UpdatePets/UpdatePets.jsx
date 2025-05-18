@@ -32,18 +32,26 @@ const UpdatePets = () => {
 
   return (
     <div className="update-container">
-      <h2>Manage Pets</h2>
-      {pets.map((pet) => (
-        <div key={pet.id} className="pet-card">
-          <p><strong>{pet.name}</strong> - {pet.type}</p>
-          <p>{pet.description}</p>
-          <p>Price: Rs.{pet.price}</p>
-          <p>Quantity: {pet.quantity}</p>
-          <img src={pet.image} alt={pet.name} height={80} />
-          <button onClick={() => handleEdit(pet)}>Edit</button>
-          <button onClick={() => handleDelete(pet.id)}>Delete</button>
-        </div>
-      ))}
+      <h2>🐾 Manage Your Pets</h2>
+      <div className="cards-wrapper">
+        {pets.map((pet) => (
+          <div key={pet.id} className="pet-card">
+            <img src={pet.image} alt={pet.name} />
+            <h3>{pet.name}</h3>
+            <span className="badge type">{pet.type}</span>
+            <p className="description">{pet.description}</p>
+            <div className="info-row">
+              <span className="badge price">Rs. {pet.price}</span>
+              <span className="badge quantity">{pet.quantity} pcs</span>
+            </div>
+            <div className="card-buttons">
+              <button className="edit-btn" onClick={() => handleEdit(pet)}>✏️ Edit</button>
+              <button className="delete-btn" onClick={() => handleDelete(pet.id)}>🗑️ Delete</button>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {editingPet && (
         <EditPetModal
           pet={editingPet}
